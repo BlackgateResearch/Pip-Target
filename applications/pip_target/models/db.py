@@ -74,3 +74,10 @@ crud.settings.auth = None                      # =auth to enforce authorization 
 ## >>> rows=db(db.mytable.myfield=='value').select(db.mytable.ALL)
 ## >>> for row in rows: print row.id, row.myfield
 #########################################################################
+
+db.define_table('target',
+                Field('user_id', db.auth_user),
+                Field('unit'),
+                Field('increment', 'integer'),
+                Field('target', 'integer'),
+                Field('current', 'integer'))
